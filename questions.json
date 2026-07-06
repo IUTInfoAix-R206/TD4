@@ -1,0 +1,527 @@
+{
+  "formatVersion": 1,
+  "tdId": "r2.06-td4",
+  "tdLabel": "R2.06 - TD4",
+  "title": "Requêtes avec SQL",
+  "intro": "Formulez, en SQL, sur la base de données exemple, les requêtes d'interrogation suivantes.",
+  "database": {
+    "name": "questionnaire",
+    "schemaFile": "data/schema.sql",
+    "insertFile": "data/insert.sql"
+  },
+  "canon": {
+    "algo": "sha256",
+    "specVersion": 1
+  },
+  "sections": [
+    {
+      "name": "Expression des recherches récursives",
+      "items": [
+        {
+          "type": "question",
+          "id": "q1",
+          "num": "1",
+          "statement": "Donnez les identifiants et libellés des racines des hiérarchies des thèmes.",
+          "expectedCols": 2,
+          "expectedRows": 2,
+          "expectedLabel": "2 attributs, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "149012bf6cb3ffd5f4570b733b6539376ad307d441faf3aec5a8d97397ca4869"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "sélection",
+            "null",
+            "récursion"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q2",
+          "num": "2",
+          "statement": "Donnez les identifiants et libellés des feuilles de la hiérarchie des thèmes.",
+          "expectedCols": 2,
+          "expectedRows": 16,
+          "expectedLabel": "2 attributs, 16 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "480b1c3b76570ebc8d8d6fcf412bcf15f409c069374cb38578849c7d8dfb1577"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "imbrication",
+            "null",
+            "récursion"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q3",
+          "num": "3",
+          "statement": "Donnez les identifiants et libellés de la hiérarchie des fils du thème Langage de requêtes.",
+          "expectedCols": 2,
+          "expectedRows": 17,
+          "expectedLabel": "2 attributs, 17 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "6ac9551c7e5ad495e909b4ac5b1b82e5ca17b9a81d69027849ad7603f2a6ccc9"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "récursion"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q4",
+          "num": "4",
+          "statement": "Donnez les identifiants et libellés des thèmes subordonnés directement ou pas (l' ensemble des themes plus spécifiques) au thème Jointure à l’exception du sous-thème Jointure imbriquée.",
+          "expectedCols": 2,
+          "expectedRows": 5,
+          "expectedLabel": "2 attributs, 5 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "bb3dc151a430efa6a47222e9e4f60c074fc20900cd1802c565f26512208a7dcd"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "récursion",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q5",
+          "num": "5",
+          "statement": "Donnez les identifiants et libellés des thèmes subordonnés directement ou pas au thème Jointure à l'exception du thème Jointure imbriquée et de ses sous-thèmes.",
+          "expectedCols": 2,
+          "expectedRows": 4,
+          "expectedLabel": "2 attributs, 4 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "54ea43342b92e1f5015af823be4a254c27b6fbd010d868cf13f5d0901166a6ec"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "récursion",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q6",
+          "num": "6",
+          "statement": "Donnez les identifiants et libellés généralisant strictement le thème Jointure externe en triant du thème le plus général au thème le plus spécifique.",
+          "expectedCols": 2,
+          "expectedRows": 4,
+          "expectedLabel": "2 attributs, 4 tuples",
+          "orderSensitive": true,
+          "hashesSorted": [
+            "876d83494a3bc37edbc8c28c8454ba54642e66d8fc11b3678c5cb3227b03a10c"
+          ],
+          "hashOrdered": "ff1084f8f0822dc1ba2aa2c7b51c2568e960c113f1fdd9ef9faa03139b238f34",
+          "difficulty": 2,
+          "tags": [
+            "récursion",
+            "tri"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q7",
+          "num": "7",
+          "statement": "Quels sont les identifiants des questions et numéros de TP se rapportant à un thème subordonné directement ou indirectement au thème Jointure ?",
+          "expectedCols": 2,
+          "expectedRows": 28,
+          "expectedLabel": "2 attributs, 28 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "d933bb670222f523972545a95cc9edd71b05f05818cb24b6c71cae740deb9bda"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "récursion",
+            "jointure",
+            "imbrication",
+            "semi-jointure"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q8",
+          "num": "8",
+          "statement": "Quels sont les identifiants et libellés des thèmes généralisant les thèmes Jointure ou Sélection simple ?",
+          "expectedCols": 2,
+          "expectedRows": 5,
+          "expectedLabel": "2 attributs, 5 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "f894a2ee653f571140cd50d81a313b3df85bc99a9a71b25aa63e335359734b11"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "récursion",
+            "union"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q9",
+          "num": "9",
+          "statement": "Quels sont les identifiants et libellés des thèmes généralisant les thèmes Jointure et Sélection simple ?",
+          "expectedCols": 2,
+          "expectedRows": 3,
+          "expectedLabel": "2 attributs, 3 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "776f89f6d6212c59291099056624dd70657eebb71b146513808d04e5f82d3ac6"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "récursion",
+            "intersection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q10",
+          "num": "10",
+          "statement": "Quels sont les identifiants et libellés des thèmes subordonnés directement ou indirectement au thème SQL LDD et qui ne sont utilisés par aucune question ?",
+          "expectedCols": 2,
+          "expectedRows": 3,
+          "expectedLabel": "2 attributs, 3 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "a598885377cc79ed336b644fbd102a1f52baae491fc998648100c7c8e845ebe0"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "récursion",
+            "anti-jointure",
+            "différence",
+            "imbrication"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q11",
+          "num": "11",
+          "statement": "Quels sont les identifiants et libellés des thèmes feuilles de la hiérarchie des thèmes qui sont subordonnés directement ou indirectement à la même racine que celle du thème Jointure.",
+          "expectedCols": 2,
+          "expectedRows": 10,
+          "expectedLabel": "2 attributs, 10 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "0895a3a41613b1073a1e849d9c53a1c7cb7d061d1965c5d84c1f2016f08b3fb7"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "récursion",
+            "imbrication",
+            "null"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q12",
+          "num": "12",
+          "statement": "Quels sont les identifiants et libellés des thèmes se situant dans la branche, au-dessus ou en dessous, du thème Jointure ?",
+          "expectedCols": 2,
+          "expectedRows": 9,
+          "expectedLabel": "2 attributs, 9 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "6aefa4f27021986d093f445953863dd406b9a50347040b7b5cfc380857bd8f82"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "récursion",
+            "union"
+          ],
+          "sameAs": null
+        }
+      ]
+    },
+    {
+      "name": "Expression des divisions",
+      "items": [
+        {
+          "type": "question",
+          "id": "q13",
+          "num": "13",
+          "statement": "Donnez les numéros, noms et prénoms des étudiants ayant fait toutes les questions du TP numéro 1. Proposer deux formulations différentes, avec double NOT EXISTS et HAVING, de cette requête.",
+          "expectedCols": 3,
+          "expectedRows": 4,
+          "expectedLabel": "3 attributs, 4 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "212ddef298ab035c131bf1199e685bb4acab21b07d70aa34e9b10a25472310e1"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "division",
+            "not-exists",
+            "jointure",
+            "groupement",
+            "calcul-vertical"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q14",
+          "num": "14",
+          "statement": "Quels sont les groupes d'étudiants dans lesquels tous les types de BAC sont représentés ? Proposer deux formulations différentes, avec double NOT EXISTS et HAVING, de cette requête.",
+          "expectedCols": 1,
+          "expectedRows": 3,
+          "expectedLabel": "1 attribut, 3 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "9de28235742164662eb2163b3c6b9011a79b748c1004a9005bf8941412285f12"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "division",
+            "not-exists",
+            "groupement",
+            "calcul-vertical",
+            "distinct"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q15",
+          "num": "15",
+          "statement": "Quels sont les groupes d'étudiants pour lesquels au moins un étudiant a été évalué pour chaque TP ?",
+          "expectedCols": 1,
+          "expectedRows": 2,
+          "expectedLabel": "1 attribut, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "3cdc4598ab4dc5d914655a2947bbefbcbf0ff18a6ea97bad147122a27a2cafdb"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "division",
+            "not-exists",
+            "jointure",
+            "groupement",
+            "calcul-vertical",
+            "distinct"
+          ],
+          "sameAs": null
+        }
+      ]
+    },
+    {
+      "name": "Requêtes complexes",
+      "items": [
+        {
+          "type": "question",
+          "id": "q16",
+          "num": "16",
+          "statement": "Donnez les numéros, noms et prénoms des étudiants ayant eu au moins un résultat faux au TP numéro 2 et au TP numéro 3. Proposer trois formulations différentes.",
+          "expectedCols": 3,
+          "expectedRows": 1,
+          "expectedLabel": "3 attributs, 1 tuple",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "9f674eccb544ffe0fd05aaec1c6e7847bb3a05b6d6de14d00a9bc4182792c424"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "intersection",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q17",
+          "num": "17",
+          "statement": "Donnez les numéros des groupes d'étudiants dont aucun étudiant n'a obtenu un résultat faux au TP numéro 1.",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (4)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "47b1ebb3b5fb943fb6457ab6cb798e25384883337f4fe5e57e9c4731d6111231"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "anti-jointure",
+            "imbrication"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q18",
+          "num": "18",
+          "statement": "Donnez les numéros, noms et prénoms des étudiants dans le même groupe et ayant le même type de Bac que l'étudiante Marie Dujardin.",
+          "expectedCols": 3,
+          "expectedRows": 7,
+          "expectedLabel": "3 attributs, 7 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "f767b36fb5856041d51a10af73441e9fd336fb4c964bd45e611398c452181516"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q19",
+          "num": "19",
+          "statement": "Donnez les numéros, noms et prénoms des étudiants ayant réalisés le nombre de variantes demandées pour au moins une Question du TP numéro 2.",
+          "expectedCols": 3,
+          "expectedRows": 19,
+          "expectedLabel": "3 attributs, 19 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "64f161b8fc9eeb8ef3db696ec52408d85492bf05e98f7b212f1f6a44aaf58bf5"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q20",
+          "num": "20",
+          "statement": "Donnez l'identifiant des questions et les numéros de TP portant à la fois sur le thème Jointure imbriquée et sur le thème Fonction agrégative ou statistique.",
+          "expectedCols": 2,
+          "expectedRows": 2,
+          "expectedLabel": "2 attributs, 2 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "75d0794fade8566499c8a93e7aa3ae3002ee04769a8f73e8ed408de4ec4b4056"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "intersection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q21",
+          "num": "21",
+          "statement": "Donnez, pour chaque TP, le nombre de points obtenu par l'étudiante Marie Dujardin.",
+          "expectedCols": 2,
+          "expectedRows": 4,
+          "expectedLabel": "2 attributs, 4 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "6d39993ff53c12bbe26657a02f94aad44a7b9e65117fb2dee10838f43b38b2ec"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "groupement",
+            "calcul-vertical",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q22",
+          "num": "22",
+          "statement": "Donnez les numéros et noms des étudiants ayant eu au moins trois résultats justes à des questions complexes.",
+          "expectedCols": 2,
+          "expectedRows": 3,
+          "expectedLabel": "2 attributs, 3 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "187bfd97e164c8b78c74a526980c9db26cf15fcd037b68ddf0d19905b7396da5"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "groupement",
+            "calcul-vertical",
+            "sélection"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q23",
+          "num": "23",
+          "statement": "Donnez, pour chaque étudiant ayant au moins une réponse juste au TP numéro 3, le nombre de réponses effectivement justes à ce TP.",
+          "expectedCols": 3,
+          "expectedRows": 12,
+          "expectedLabel": "3 attributs, 12 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "490a954d2325a4e2a1c1165945a8aa5d1f08086be95d0c63d50e01055dff8fd0"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "semi-jointure",
+            "groupement",
+            "calcul-vertical",
+            "sélection"
+          ],
+          "sameAs": null
+        }
+      ]
+    }
+  ],
+  "subjectPdf": "sujet.pdf"
+}
