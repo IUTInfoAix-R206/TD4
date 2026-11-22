@@ -1,4 +1,4 @@
-# R2.06 - TD4 - Requêtes avec SQL
+# R2.06 - TD4 - Recherche récursive, division et requêtes complexes
 
 TD de bases de données de l'IUT d'Aix-Marseille (ressource R2.06, Exploitation d'une base de données).
 

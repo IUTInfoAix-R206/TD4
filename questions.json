@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "tdId": "r2.06-td4",
   "tdLabel": "R2.06 - TD4",
-  "title": "Requêtes avec SQL",
+  "title": "Recherche récursive, division et requêtes complexes",
   "intro": "Formulez, en SQL, sur la base de données exemple, les requêtes d'interrogation suivantes.",
   "database": {
     "name": "questionnaire",
